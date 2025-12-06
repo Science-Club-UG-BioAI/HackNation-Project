@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import Home from "./pages/home";
+import System from "./pages/system"
+import Help from "./pages/help";
+import Topbar from "./pages/main_components/topbar";
+import LoginPanel from "./pages/main_components/login";
+import BudgetTool from "./pages/Budget_tool";
+import HelpPrivate from "./pages/help_private";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [activeTab, setActiveTab] = useState('home');
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    //przygotowanie pod sprawdzanie zalogowania uzytkownika
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user,setUser] = useState(null);
+    //zapewnia logowanie
+    const handleLogin = (userData) => {
+        setUser(userData);
+        setIsLoggedIn(true);
+        setIsLoginOpen(false);
+        setActiveTab('home')
+    };
+    //zapewnia wylogowywanaie
+    const handleLogout = () => {
+        setUser(null);
+        setIsLoggedIn(false);
+        setActiveTab('home')
+    }
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div className="app">
+            <Topbar 
+                changeTab={setActiveTab}
+                onOpenLogin={() => setIsLoginOpen(true)}
+                isLoggedIn={isLoggedIn}
+                user={user}
+                onLogout={handleLogout}
+            />
+            <main>
+                {activeTab === 'home' && 
+                    (!isLoggedIn? <Home/> : <BudgetTool/>
+                )} 
+                {activeTab === 'system' && <System/>}
+                {activeTab === 'help' && 
+                    (!isLoggedIn? <Help/> : <HelpPrivate/>)}
+            </main>
+            {isLoginOpen && (
+        <LoginPanel onClose={() => setIsLoginOpen(false)} onLogin={handleLogin}/>)}
+        </div>
+    );
 }
-
-export default App
+export default App;
