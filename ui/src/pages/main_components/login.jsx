@@ -1,13 +1,33 @@
 //panel do logowania
 import '../../css/login.css'
+import { useState } from "react";
 
 export default function LoginPanel({onClose, onLogin}) {
-    const handleSubmit = (e) => {
+    const [error, setError] = useState(null);
+    const handleSubmit = async (e) => {
         e.preventDefault(); 
         const formData = new FormData(e.target);
         const login = formData.get('login'); //placeholder
         const password = formData.get('password'); //placeholder
-        onLogin({login});
+        
+        try {
+            const response = await fetch("http://localhost:8000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({login, password}),
+            });
+            if (!response.ok) {
+                const data = await response.json();
+                setError(data.detail || "Niepoprawne dane logowania");
+                return;
+            }
+            const data = await response.json();
+            onLogin({login:data.login});
+        } catch (err) {
+            setError("Błąd połączenia z serwerem!!!");
+        }
     };
     return (
         <div className="modal-backdrop" onClick={onClose}>
@@ -16,6 +36,7 @@ export default function LoginPanel({onClose, onLogin}) {
                     :D
                 </button>
                 <h2>Zaloguj się</h2>
+                {error && <p className='error-msg'>{error}</p>}
                 <form className="modal-form" onSubmit={handleSubmit}>
                     <label>
                         Login
