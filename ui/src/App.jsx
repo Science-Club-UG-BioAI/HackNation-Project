@@ -1,28 +1,17 @@
 import { useState } from "react"
 import Home from "./pages/home";
 import Upload from "./pages/upload"
+import Topbar from "./pages/main_components/topbar";
 
 function App() {
     const [activeTab, setActiveTab] = useState('home');
 
-    const renderTab = () => {
-        switch (activeTab) {
-            case 'home':
-                return <Home />;
-            case 'upload':
-                return <Upload />;
-            default:
-                return <Home />;
-        }
-    };
     return (
         <div className="app">
-            <nav className="topbar">
-                <button onClick={() => setActiveTab('home')}>Home</button>
-                <button onClick={() => setActiveTab('upload')}>Upload</button>
-            </nav>
-            <main className="content">
-                {renderTab()}
+            <Topbar changeTab={setActiveTab}/>
+            <main>
+                {activeTab === 'home' && <Home/>}
+                {activeTab === 'upload' && <Upload/>}
             </main>
         </div>
     );

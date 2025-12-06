@@ -1,3 +1,4 @@
+import './css/index.css'
 import { createRef, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
