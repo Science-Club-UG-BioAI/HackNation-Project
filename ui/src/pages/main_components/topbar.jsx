@@ -8,6 +8,7 @@ export default function Topbar({changeTab, onOpenLogin, isLoggedIn, user, onLogo
                 <div className="topbar-left">
                     <div className="topbar-logo">
                         <div className="logo-image">
+                            <img src='../assets/ministerstwo_cyfryzacji_main_icon.png' alt='logo'/>
                             <div className="logo-text">
                                 <span className="logo-subtitle">Zgrany budżet</span>
                             </div>

@@ -35,7 +35,10 @@ export default function LoginPanel({onClose, onLogin}) {
                 <button className="modal-close" type="button" onClick={onClose}>
                     :D
                 </button>
-                <h2>Zaloguj się</h2>
+                <h2 className='modal-title'>Logowanie do systemu</h2>
+                <p className='model-subtitle'>
+                    Wprowadź dane przypisane do Twojego konta słuzbowego.
+                </p>
                 {error && <p className='error-msg'>{error}</p>}
                 <form className="modal-form" onSubmit={handleSubmit}>
                     <label>
@@ -46,7 +49,10 @@ export default function LoginPanel({onClose, onLogin}) {
                         Hasło
                         <input type="password" name="password" required/>
                     </label>
-                    <button type="submit">Zaloguj</button>
+                    <div className='modal-actions'>
+                        <button type="submit" className='btn-primary'>Zaloguj</button>
+                        <button type='button' className='btn-secondary btn-secondary-ghost'>Rejestracja</button>
+                    </div>
                 </form>
             </div>
         </div>
