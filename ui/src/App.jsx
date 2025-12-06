@@ -4,6 +4,8 @@ import System from "./pages/system"
 import Help from "./pages/help";
 import Topbar from "./pages/main_components/topbar";
 import LoginPanel from "./pages/main_components/login";
+import BudgetTool from "./pages/Budget_tool";
+import HelpPrivate from "./pages/help_private";
 
 function App() {
     const [activeTab, setActiveTab] = useState('home');
@@ -35,9 +37,12 @@ function App() {
                 onLogout={handleLogout}
             />
             <main>
-                {activeTab === 'home' && <Home/>}
+                {activeTab === 'home' && 
+                    (!isLoggedIn? <Home/> : <BudgetTool/>
+                )} 
                 {activeTab === 'system' && <System/>}
-                {activeTab === 'help' && <Help/>}
+                {activeTab === 'help' && 
+                    (!isLoggedIn? <Help/> : <HelpPrivate/>)}
             </main>
             {isLoginOpen && (
         <LoginPanel onClose={() => setIsLoginOpen(false)} onLogin={handleLogin}/>)}
