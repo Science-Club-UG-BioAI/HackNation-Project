@@ -1,19 +1,19 @@
 
 .topbar {
-    height: 100px;
+    width: 100%;
+}   
+.topbar-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}   
-
-.topbar-nav {
-    padding-bottom: 55px;
+    height: 100px;
+    padding: 0 20px;
+}
+.topbar-right {
+    margin-left: 15px;
 }
 .topbar-line {
     border: none;
-    border-top: 1.5px solid #D0D5DD;
-    height: 1px;
-    width: 100%;
-    margin: 8px 0;
-    flex: 0 0 auto;
+    border-top: 1.5px solid #D0D5DD;    width: 100%;
+    margin: 0;   
 }
