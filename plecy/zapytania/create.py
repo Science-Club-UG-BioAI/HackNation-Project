@@ -10,7 +10,6 @@ DB_PATH.parent.mkdir(exist_ok=True)
 conn = sqlite3.connect(DB_PATH)
 cur = conn.cursor()
 
-# tabela users
 cur.execute(
     """
     CREATE TABLE IF NOT EXISTS users (
@@ -21,7 +20,6 @@ cur.execute(
     """
 )
 
-# wyczyść (na wszelki wypadek) i wstaw jednego usera
 cur.execute("DELETE FROM users;")
 cur.execute(
     "INSERT INTO users (login, password) VALUES (?, ?);",
