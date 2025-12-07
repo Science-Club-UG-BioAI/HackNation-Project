@@ -1,4 +1,3 @@
-import HelpTest from "./help_components/help-test";
 
 
 export default function Help(){

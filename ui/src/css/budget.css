@@ -1,0 +1,164 @@
+.page-budget .page-title {
+    text-align: center;
+}
+
+.page-budget .page-intro {
+    max-width: 720px;
+    margin: 4px auto 0 auto;
+    font-size: 1rem;
+    color: #4B5563;
+    text-align: center;
+}
+
+
+.budget-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 620px); 
+    gap: 16px 32px;
+    justify-content: center;   
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+.budget-sidebar {
+    background-color: #F9FAFB;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.page-budget .budget-sidebar-btn {
+    all: unset;                     
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid transparent;  
+    background-color: transparent;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.page-budget .budget-sidebar-btn:hover {
+    background-color: #EFF4FF;
+    border-color: #D0D5DD;
+}
+
+.page-budget .budget-sidebar-btn--active {
+    background-color: #EFF4FF;
+    border-color: #D0D5DD;
+}
+
+.page-budget .budget-sidebar-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(212, 33, 33, 0.18);
+}
+
+.budget-main {
+}
+
+.budget-section {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #D0D5DD;
+    padding: 16px 20px;
+}
+
+.budget-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+.budget-section-desc {
+    font-size: 0.95rem;
+    color: #4B5563;
+    margin-bottom: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: #4B5563;
+}
+
+.form-input {
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.95rem;
+}
+
+.form-input:focus {
+    outline: 2px solid #D42121;
+    outline-offset: 1px;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+}
+
+.form-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.form-checkbox {
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.budget-results-placeholder,
+.budget-download-placeholder,
+.budget-info-placeholder {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px dashed #D0D5DD;
+    background-color: #F9FAFB;
+    font-size: 0.9rem;
+    color: #4B5563;
+}
+
+.budget-results-title,
+.budget-download-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.budget-results-table {
+    margin-top: 4px;
+}
+
+.budget-info-text {
+    margin: 0;
+}
