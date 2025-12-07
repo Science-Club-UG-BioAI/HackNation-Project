@@ -1,64 +1,78 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(15, 23, 42, 0.45); 
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999; 
 }
-
 .modal {
-  background: #121212;
-  padding: 2rem;
-  border-radius: 8px;
-  min-width: 300px;
-  max-width: 400px;
+  background: #ffffff;
+  padding: 24px 24px 20px 24px;
+  border-radius: 4px;
+  min-width: 320px;
+  max-width: 420px;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.25);
+  border: 1px solid #D0D5DD;
 }
-
-.modal h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+.modal-title {
+  margin: 0 0 4px 0;
 }
-
+.modal-subtitle {
+  margin: 0 0 12px 0;
+  font-variant: 0.95rem;
+  color: #4B5563;
+}
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
+  margin-top: 8px;
 }
-
-.modal-form label {
+.modal-label {
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
 }
-
 .modal-form input {
-  margin-top: 0.25rem;
+  margin-top: 4px;
   padding: 0.5rem;
   border-radius: 4px;
-  border: 1px solid #555;
-  background: #1a1a1a;
-  color: #fff;
+  border: 1px solid #D0D5DD;
+  font-size: 0.95rem;
 }
-
-.modal-form button[type="submit"] {
-  margin-top: 0.5rem;
-  padding: 0.6rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.modal-label input:focus {
+  outline: 2px solid #0055CC;
+  border-color: #0055CC;
 }
-
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
 .modal-close {
   position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
+  top: 8px;
+  right: 10px;
   background: transparent;
   border: none;
-  color: #aaa;
-  font-size: 1.2rem;
+  color: #6B7280;
+  font-size: 1.4rem;
   cursor: pointer;
 }
+.error-msg {
+  margin: 8px 0;
+  color: #B91C1C;
+  font-size: 0.9rem;
+}
+.btn-secondary-ghost {
+  background-color: #ffffff;
+  color: #0055CC;
+  border: 1px solid #0055CC;
+}
+.btn-secondary-ghost:hover {
+  background-color: #EFF6FF;
+}
+

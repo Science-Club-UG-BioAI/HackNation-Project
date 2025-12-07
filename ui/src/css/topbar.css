@@ -1,6 +1,7 @@
 
 .topbar {
     width: 100%;
+    background-color: #ffffff;
 }   
 .topbar-content {
     display: flex;
@@ -8,6 +9,24 @@
     justify-content: space-between;
     height: 100px;
     padding: 0 20px;
+    border-bottom: 3px solid #D42121;
+}
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.topbar-nav button {
+    background-color: transparent;
+    border:1px solid transparent;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    color: #0055CC;
+}
+.topbar-nav button:hover {
+    background-color: #EFF6FF;
+    border-color: #0055CC;
 }
 .topbar-right {
     margin-left: 15px;

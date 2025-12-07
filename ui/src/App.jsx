@@ -4,6 +4,7 @@ import System from "./pages/system"
 import Help from "./pages/help";
 import Topbar from "./pages/main_components/topbar";
 import LoginPanel from "./pages/main_components/login";
+import Footer from "./pages/main_components/footer";
 import BudgetTool from "./pages/Budget_tool";
 import HelpPrivate from "./pages/help_private";
 
@@ -46,6 +47,7 @@ function App() {
             </main>
             {isLoginOpen && (
         <LoginPanel onClose={() => setIsLoginOpen(false)} onLogin={handleLogin}/>)}
+        <Footer/>
         </div>
     );
 }
