@@ -5,7 +5,7 @@ export default function Home(){
     return (
         <div className="page page-home">
             <header className="page-header">
-                <h1 className="page-title">Zgrany budzet - system zarządzania budzetem państwowym</h1>
+                <h1 className="page-title">Zgrany budzet<br></br>system zarządzania budzetem państwowym</h1>
                 <p className="page-intro">
                     To narzędzie wspiera urzędników w analizie, planowaniu i monitorowaniu wydatków publicznych
                     oraz ułatwia przygotowanie raportów budzetowych

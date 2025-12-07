@@ -1,4 +1,5 @@
 import '../../css/topbar.css'
+import logo from '../../assets/ministerstwo_cyfryzacji_main_icon.png'
 
 //uklad topbara
 export default function Topbar({changeTab, onOpenLogin, isLoggedIn, user, onLogout}){
@@ -8,7 +9,7 @@ export default function Topbar({changeTab, onOpenLogin, isLoggedIn, user, onLogo
                 <div className="topbar-left">
                     <div className="topbar-logo">
                         <div className="logo-image">
-                            <img src='../assets/ministerstwo_cyfryzacji_main_icon.png' alt='logo'/>
+                            <img src={logo} alt='Logo ministerstwa' className='logo-img'/>
                             <div className="logo-text">
                                 <span className="logo-subtitle">Zgrany budżet</span>
                             </div>
