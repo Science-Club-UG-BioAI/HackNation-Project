@@ -13,7 +13,127 @@ body {
     background-color: #ffffff;
     color: #000000;
 }
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    max-width: 1200px;
+    margin: 24px auto 32px auto;
+    flex: 1;
+}
+.page {
+    padding: 16px 0 32px 0;
+}
+.page-header {
+    margin-bottom: 16px ;
+}
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+.page-intro {
+    font-size: 1rem;
+    color: #4B5563;
+}
+.topbar-logo {
+    display: flex;
+    align-items: center;
+}
+.logo-image {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img {
+    height: 48px;
+    width: auto;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+.logo-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1B2A41;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
 
+.logo-subtitle {
+    font-size: 0.8rem;
+    color: #4B5563;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+    padding: 16px 20px;
+}
+.card-title {
+    font-size: 0.95rem;
+    color: #4B5563;
+}
+.card-text {
+    font-size: 0.95rem;
+    color: #4B5563;
+}
 
+.link-primary {
+    color: #0055CC;
+    text-decoration: underline;
+    text-underline-offset: 2px;   
+}
+.link-primary:hover {
+    color: #003E99;
+}
+.btn-primary {
+    background-color: #D42121;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.btn-primary:hover {
+    background-color: #B01B1B;
+}
+.btn-secondary {
+    background-color: #0055CC;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.btn-secondary:hover {
+    background-color: #003E99;
+}
 
-
+/*footer*/
+.footer {
+    border-top: 1px solid #D0D5DD;
+    background-color: #F5F7FA;
+    padding: 12px 0;
+    margin-top: auto;
+}
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-size: 0.85rem;
+    color: #4B5563;
+}
+.footer-text + .footer-text {
+    margin-top: 4px;
+}
