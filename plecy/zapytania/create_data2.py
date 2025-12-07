@@ -1,22 +1,15 @@
 from pathlib import Path
 import sqlite3
 
-# Lokalizacja bazy: db/baza.db (tak jak chciałeś)
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "db" / "baza_main.db"
 
-# Upewnij się, że katalog db istnieje
 DB_PATH.parent.mkdir(exist_ok=True)
 
-# Połączenie
 conn = sqlite3.connect(DB_PATH)
 cur = conn.cursor()
 
 cur.execute("PRAGMA foreign_keys = ON;")
-
-# ============================
-# CREATE TABLES (SQLite version)
-# ============================
 
 cur.executescript(
     """
@@ -105,10 +98,6 @@ CREATE TABLE IF NOT EXISTS dbo_BudgetLine (
 """
 )
 
-# ============================
-# INSERT DATA (all your examples)
-# ============================
-
 cur.execute(
     "INSERT INTO ref_BudgetPart (PartCode, Name, IsGroup) VALUES (?, ?, ?)",
     ("01", "Kancelaria Prezydenta RP", 0),
@@ -154,7 +143,6 @@ cur.execute(
     ("Dyrektor Finansowy",),
 )
 
-# wstawienie linii budżetowej (odwołuje się do FK)
 cur.execute(
     """
     INSERT INTO dbo_BudgetLine (
@@ -165,9 +153,6 @@ cur.execute(
     (1, 1, 1, 1, 1, 1, 1, 1, 1, 10000.00),
 )
 
-# ============================
-# SAVE & CLOSE
-# ============================
 
 conn.commit()
 conn.close()

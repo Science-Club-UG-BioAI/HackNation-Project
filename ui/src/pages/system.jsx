@@ -1,4 +1,3 @@
-import SystemTest from "./system_components/system-test";
 
 export default function System(){
     return (
